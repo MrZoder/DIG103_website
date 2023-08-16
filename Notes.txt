@@ -1,0 +1,7 @@
+Fonts used "Are you ready australia" = uncracked
+text under = Arial Rounded MT
+nav bar = Arial Rounded MT
+
+ticket section buy and email = dubai and Arial Rounded MT bold
+Events = Arial bold
+

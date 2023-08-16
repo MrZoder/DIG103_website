@@ -1,0 +1,761 @@
+/* initalizing fonts */
+@import url("https://fonts.cdnfonts.com/css/arial");
+@import url("https://fonts.cdnfonts.com/css/comfortaa");
+/* Selecting all elements to assure everything is styled consistently */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Arial Rounded MT", sans-serif;
+}
+/* Initalizing global variables */
+:root {
+  --bg-color: #94fff8;
+  --nav-hover-color: #49d6d6;
+  --nav-color: #92498d;
+  --second-bg-color: #f786ef;
+  --text-color: #ffffff;
+  --text-second-color: #92498d;
+}
+/* Remove Scroll bar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Set the background image of the body element */
+body {
+  background-image: url("Images/eeel_Photoshop.png");
+  /* Do not repeat the background image */
+  background-repeat: no-repeat;
+  /* Fix the background image in place */
+  background-attachment: fixed;
+  /* Scale the background image to cover the entire element */
+  background-size: cover;
+  /* Sets the text color to the value of the --text-color variable */
+  color: var(--text-color);
+}
+
+/* Set the base font to 62.5%  */
+html {
+  font-size: 62.5%;
+  /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+}
+
+/* Set the minium height of the section element to 100% of the viewport height and add padding  */
+section {
+  overflow: hidden;
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+
+/* Set the position of the header element to fixed and position it at the top left corner of the viewport */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Add padding to the header element */
+  padding: 2rem 9%;
+  /* set the background color of the header to none */
+  background: none;
+  /* Display the child elements of the header element as a flex container */
+  display: flex;
+  /* Align the child elements of the header element to the center and distribute them evenly along the main axis */
+  justify-content: space-between;
+  align-items: center;
+  /* set the z index of the header element to 100 */
+  z-index: 100;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lineUp {
+  background-color: #281850;
+  filter: blur(70px);
+}
+/* set the width and height of the image inside the log-img element and add negative margin to adjust its position */
+.logo-text img {
+  position: absolute;
+  width: 14vh;
+}
+/* Position and size of logo image */
+.logo-img img {
+  display: flex;
+  position: fixed;
+  left: 3em;
+  top: 1.7em;
+  width: 6vh;
+}
+
+.logo-img a:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--nav-hover-color);
+  opacity: 0.7;
+  transition: 0.5s ease;
+}
+
+.logo-img a:not(:hover) {
+  transition: 0.5s ease-out;
+}
+
+/* Style of navbar links */
+.navbar a {
+  flex: 1;
+  font-size: 1.9rem;
+  color: var(--nav-color);
+  margin-left: 5rem;
+  transition: 0.5s;
+}
+
+/* Style of navbar links on hover and when active */
+.navbar a:hover,
+.navbar a.active {
+  color: var(--nav-hover-color);
+}
+
+/* Change font size of active navbar link */
+.navbar a.active {
+  font-size: medium;
+}
+
+/* Style of non-hovered navbar links when navbar is hovered */
+.navbar:hover a:not(:hover) {
+  color: white;
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+/* Style of menu icon */
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--text-color);
+  display: none;
+}
+
+.ready-australia {
+  display: block;
+  position: absolute;
+  left: 45%;
+  top: 150px;
+  transform: translateX(-60%);
+}
+
+/* Size and position of image in ready-australia section */
+.ready-australia img {
+  width: 35vw;
+}
+
+.ready-australia p {
+  position: absolute;
+  font-size: 1.6rem;
+  margin-top: -90px;
+}
+
+/* Style of paragraph text in home-content section */
+.home-content p {
+  font-size: 1.9rem;
+  color: var(--bg-color);
+}
+
+/* Style of button */
+.btn {
+  position: absolute;
+  left: 12%;
+  top: 50%;
+  padding: 2rem 2.8rem;
+  cursor: pointer;
+  background: var(--second-bg-color);
+  border-radius: 4rem;
+  box-shadow: 0 0 1rem var(--bg-color);
+  font-size: 1.6rem;
+  color: var(--text-second-color);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  transition: 0.5s ease;
+  z-index: 1;
+}
+
+/* Remove box shadow from button on hover */
+.btn:hover {
+  background-color: var(--nav-hover-color);
+  color: var(--text-color);
+  box-shadow: none;
+}
+
+/* Style and position of social media section */
+.social-media {
+  position: absolute;
+  left: 20px;
+  top: 150px;
+  padding: 0;
+  margin: 0;
+}
+/* Style and position of social media links */
+.social-media a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  margin: 4.5rem 0;
+  color: #ffb9fa;
+  transition: 0.5s;
+}
+
+/* Change color of social media link on hover */
+.social-media a:hover {
+  color: #3ae9cc;
+}
+
+/* Style of non-hovered social media links when social media section is hovered */
+.social-media:hover a:not(:hover) {
+  color: white;
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+/* Style and position of first divider */
+.divider_1 {
+  display: flex;
+  position: fixed;
+  border-left: 0.5px solid #3ae9cc;
+  border-left-width: thin;
+  position: fixed;
+  margin-left: 10rem;
+  filter: blur(1px);
+  height: 130rem;
+}
+
+/* Style and position of second divider */
+.divider_2 {
+  display: flex;
+  position: absolute;
+  border-left: 2px solid #3ae9cc;
+  border-left-width: thin;
+  margin-left: -33%;
+  height: 224px;
+  filter: blur(1px);
+  z-index: 1; /* This will make sure the divider is behind the container and box_1 */
+}
+
+/* Style and position of third divider */
+.divider_3 {
+  display: flex;
+  position: absolute;
+  border-left: 2px solid #3ae9cc;
+  border-left-width: thin;
+  margin-left: 33%;
+  height: 224px;
+  filter: blur(1px);
+  z-index: 1; /* This will make sure the divider is behind the container and box_1 */
+}
+
+/* Position of container */
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0rem;
+}
+
+/* Style and position of first box */
+.box_3 {
+  flex: 1 1 30rem;
+  padding: 1.3rem 2rem 4rem;
+  height: 224px;
+  background-color: rgba(0, 0, 0, 0.164);
+  backdrop-filter: blur(10px);
+  z-index: 1; /* This will make sure the box_1 is positioned above the divider_2 */
+}
+
+/* Style and position of second box */
+.box_2 {
+  flex: 1 1 30rem;
+  padding: 0rem 2rem 4rem;
+  height: 224px;
+  background-color: rgba(0, 0, 0, 0.164);
+  backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+/* Style and position of third box */
+.box_1 {
+  flex: 1 1 30rem;
+  padding: 0rem 2rem 4rem;
+  height: 224px;
+  background-color: rgba(0, 0, 0, 0.164);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+/* Style of first heading */
+.heading_1 {
+  text-align: left;
+  margin-top: 2rem;
+  margin-left: 3rem;
+  font-size: 2rem;
+  font-family: arial 300;
+  letter-spacing: 2px;
+  color: #f786ef;
+}
+
+/* Style of second heading */
+.heading_2 {
+  text-align: center;
+  margin-top: 2rem;
+
+  font-size: 3rem;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 400;
+}
+
+/* Style of span in second heading */
+.heading_2 span {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #3aeff8;
+}
+
+/* Style of third heading */
+.heading_3 {
+  text-align: center;
+  font-size: 4rem;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+/* Style of span in third heading */
+.heading_3 span {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 800;
+  color: #3aeff8;
+}
+
+/* Position of content in first box */
+.box_3-content {
+  justify-content: center;
+  text-align: center;
+  margin-top: 4.5rem;
+}
+
+/* Style of paragraph text in first box content */
+.box_3-content p {
+  color: #ffffffde;
+  font-weight: 100;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-bottom: 9px;
+}
+
+/* Style of input field */
+.input {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: 500;
+  font-size: 0.8vw;
+  width: 190px;
+  color: #fff;
+  background-color: rgb(28, 28, 30);
+  box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.5), 0 0 0 0.15vw transparent;
+  border-radius: 0.9vw;
+  border: none;
+  outline: none;
+  padding: 0.5vw;
+  transition: 0.4s;
+  z-index: 1;
+}
+
+/* Change box shadow of input field on hover */
+.input:hover {
+  box-shadow: 0 0 0 0.15vw rgba(135, 207, 235, 0.186);
+}
+
+/* Change box shadow of input field when focused */
+.input:focus {
+  box-shadow: 0 0 0 0.15vw skyblue;
+}
+
+/* Position of content in second box */
+.box_2-content {
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+/* Style of paragraph text in second box content */
+.box_2-content p {
+  color: #ffffffde;
+  font-weight: 100;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Style of bold text */
+.bold-text p {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+/* Position of content in third box */
+.box_1-content {
+  justify-content: center;
+  align-items: center;
+  margin-left: 3.1rem;
+  margin-top: 3rem;
+}
+
+/* Style of paragraph text in third box content */
+.box_1-content P {
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+  color: #f786ef;
+}
+
+/* Style of glowing text */
+.glow-text p {
+  margin-bottom: 2.5rem;
+  font-size: 1.7rem;
+  color: yellow;
+  text-shadow: yellow 0 5px 5px;
+  filter: blur(0.4px);
+}
+
+/* Style of glowing text */
+.glow-text_1 p {
+  margin-top: 1rem;
+  font-size: 1.7rem;
+  color: yellow;
+  text-shadow: yellow 0 5px 5px;
+  filter: blur(0.4px);
+}
+
+@media (max-width: 2560px) {
+  .ready-australia {
+    top: 20%;
+    left: 33.5%;
+  }
+
+  .ready-australia p {
+    margin-top: -190px;
+  }
+
+  .logo-text img {
+    left: 12em;
+  }
+
+  .logo-img img {
+    left: 1em;
+  }
+
+  .social-media {
+    top: 720px;
+  }
+
+  .container {
+    width: 100vw;
+  }
+
+  .input {
+    width: 14vw;
+  }
+}
+
+@media (max-width: 1920px) {
+  .ready-australia p {
+    font-size: 1.7rem;
+    margin-top: -140px;
+  }
+
+  .logo-img img {
+    left: 2em;
+  }
+
+  .social-media {
+    top: 390px;
+  }
+}
+
+@media (max-width: 1470px) {
+  .ready-australia p {
+    margin-top: -100px;
+  }
+
+  .social-media {
+    top: 240px;
+  }
+}
+@media (max-width: 1280px) {
+  .social-media {
+    top: 150px;
+  }
+
+  .ready-australia {
+    left: 33.5%;
+  }
+
+  .ready-australia p {
+    margin-top: -87px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-device-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+
+  .social-media {
+    top: 150px;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 2rem 3%;
+  }
+
+  section {
+    padding: 10rem 3% 2rem;
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles for smartphones in portrait and landscape mode go here */
+  html {
+    font-size: 50%;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .header {
+    padding: 0rem 3%;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    backdrop-filter: blur(10px);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+
+  .navbar.active {
+    display: block;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+
+  .ready-australia img {
+    margin-top: 4rem;
+    width: 70vw;
+  }
+
+  .btn {
+    left: 12rem;
+  }
+
+  .divider_1 {
+    display: none;
+    margin-left: 10rem;
+  }
+
+  .logo-text img {
+    height: 7vh;
+    top: 5%;
+    left: 0;
+    width: 90%;
+    padding: 1.5rem 3%;
+  }
+
+  .logo-text {
+    padding: 0 21%;
+  }
+
+  .logo-img img {
+    height: 8vh;
+    top: -4px;
+    left: 9%;
+    width: 13%;
+    padding: 1.5rem 3%;
+  }
+
+  .container {
+    top: auto;
+    justify-content: center;
+  }
+
+  .box_1 {
+    width: 50vh;
+    background-color: #92498d;
+  }
+
+  .box_2 {
+    width: 50vh;
+    z-index: 1;
+    background-color: #92498d;
+  }
+  .box_3 {
+    width: 35vh;
+    background-color: #3ae9cc;
+  }
+
+  .box_1-content p {
+    font-size: 1rem;
+  }
+
+  .box_2-content p {
+    font-size: 1rem;
+  }
+
+  .heading_2 {
+    font-size: 1rem;
+  }
+
+  .box_3-content p {
+    font-size: 1rem;
+  }
+
+  .box_3-content {
+    margin-left: 0.2;
+  }
+}
+
+/*==================================IGNORE A3 Practice===============================*/
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles for smartphones in landscape mode go here */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles for smartphones in portrait mode go here */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles for iPads in portrait and landscape mode go here */
+  #menu-icon {
+    display: block;
+  }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles for large screens go here */
+}
+
+/* BREAKPOINTS Optimization for site*/
+/* @media screen and (max-width: 1200px) {
+    html {
+      font-size: 55%;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .header {
+      padding: 2rem 3%;
+    }
+  
+    section {
+      padding: 10rem 3% 2rem;
+    }
+  }
+
+  @media screen and (max-width: 400px){
+    .navbar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 1rem 3%;
+      background: var(--bg-color);
+      border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+      display: none;
+    }
+
+    .navbar a {
+    display: block;
+    font-size: 0.1rem;
+    margin: 3rem 0;
+  }
+
+  .btn{
+    right: 15%;
+    width: 25vw;
+    height: 10vh;
+  }
+
+  .divider_1{
+    left: -5%;
+  }
+
+  .logo-img img{
+    
+    width: 29vw;
+    height: 8vh;
+  }
+
+  .home-content p{
+    font-size: 1.5rem;
+  }
+
+  .home-content h1 img{
+    margin-left: 55%;
+    width: 29vw;
+    height: auto;
+  }
+
+  .home-content {
+    flex-direction: column;
+  }
+
+  
+  .box_3{
+    width: 40vw;
+  }
+
+  .box_2{
+    right: 33%;
+    width: 40vw;
+  }
+
+  .box_1{
+    right: -1%;
+    width: 40vw;
+  }
+
+
+
+  } */
