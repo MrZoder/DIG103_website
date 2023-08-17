@@ -47,6 +47,6 @@ ScrollReveal({
 
 });
 
-// ScrollReveal().reveal('.home-content', {origin: 'top'});
-// ScrollReveal().reveal('.home-content, .lineUp', {origin: 'bottom'});
-// ScrollReveal().reveal('.home-content, .ready-australia', {origin: 'left'});
+ScrollReveal().reveal('.ready-australia', {origin: 'top'});
+ScrollReveal().reveal('.ready-australia, .lineUp', {origin: 'bottom'});
+ScrollReveal().reveal('.btn', {origin: 'left'});

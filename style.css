@@ -78,10 +78,6 @@ section {
   align-items: center;
 }
 
-.lineUp {
-  background-color: #281850;
-  filter: blur(70px);
-}
 /* set the width and height of the image inside the log-img element and add negative margin to adjust its position */
 .logo-text img {
   position: absolute;
@@ -109,11 +105,27 @@ section {
 
 /* Style of navbar links */
 .navbar a {
+  position: relative;
   flex: 1;
   font-size: 1.9rem;
   color: var(--nav-color);
   margin-left: 5rem;
   transition: 0.5s;
+}
+
+.navbar a::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(62, 202, 202);
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.navbar a.active::before {
+  width: 100%;
 }
 
 /* Style of navbar links on hover and when active */
@@ -144,9 +156,19 @@ section {
 .ready-australia {
   display: block;
   position: absolute;
-  left: 45%;
-  top: 150px;
-  transform: translateX(-60%);
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.4rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* Size and position of image in ready-australia section */
@@ -448,10 +470,17 @@ section {
   filter: blur(0.4px);
 }
 
+.lineUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #281850;
+}
+
 @media (max-width: 2560px) {
   .ready-australia {
     top: 20%;
-    left: 33.5%;
+    left: 12.3%;
   }
 
   .ready-australia p {
@@ -494,7 +523,7 @@ section {
   }
 }
 
-@media (max-width: 1470px) {
+@media (min-width: 1470px) and (max-width: 1507px) {
   .ready-australia p {
     margin-top: -100px;
   }
@@ -503,13 +532,14 @@ section {
     top: 240px;
   }
 }
+
 @media (max-width: 1280px) {
   .social-media {
     top: 150px;
   }
 
   .ready-australia {
-    left: 33.5%;
+    left: 12.3%;
   }
 
   .ready-australia p {
@@ -542,15 +572,15 @@ section {
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   /* Styles for smartphones in portrait and landscape mode go here */
   html {
-    font-size: 50%;
+    font-size: 40%;
+  }
+
+  .header {
+    padding: 1rem 3%;
   }
 
   #menu-icon {
     display: block;
-  }
-
-  .header {
-    padding: 0rem 3%;
   }
 
   .navbar {
@@ -575,13 +605,26 @@ section {
     margin: 3rem 0;
   }
 
+  .navbar a::before {
+    display: none;
+  }
+
   .ready-australia img {
-    margin-top: 4rem;
     width: 70vw;
   }
 
+  .ready-australia p {
+    margin-top: -60px;
+  }
+
   .btn {
+    top: 320px;
     left: 12rem;
+  }
+
+  .social-media a {
+    display: inline;
+    flex-direction: row;
   }
 
   .divider_1 {
@@ -590,11 +633,10 @@ section {
   }
 
   .logo-text img {
-    height: 7vh;
-    top: 5%;
-    left: 0;
-    width: 90%;
-    padding: 1.5rem 3%;
+    width: 40vw;
+    top: 29%;
+    left: 25%;
+    padding: 3rem 3%;
   }
 
   .logo-text {
@@ -602,10 +644,9 @@ section {
   }
 
   .logo-img img {
-    height: 8vh;
-    top: -4px;
-    left: 9%;
-    width: 13%;
+    width: 8vh;
+    top: 2%;
+    left: 0%;
     padding: 1.5rem 3%;
   }
 
@@ -616,33 +657,30 @@ section {
 
   .box_1 {
     width: 50vh;
-    background-color: #92498d;
   }
 
   .box_2 {
     width: 50vh;
     z-index: 1;
-    background-color: #92498d;
   }
   .box_3 {
     width: 35vh;
-    background-color: #3ae9cc;
   }
 
   .box_1-content p {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 
   .box_2-content p {
-    font-size: 1rem;
+    font-size: 1.9rem;
   }
 
   .heading_2 {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 
   .box_3-content p {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 
   .box_3-content {
